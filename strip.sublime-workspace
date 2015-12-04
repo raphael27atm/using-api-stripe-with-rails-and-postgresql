@@ -1,0 +1,574 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sub",
+				"subscription	(routes.rb)"
+			],
+			[
+				"pho",
+				"photo_controller"
+			],
+			[
+				"photo",
+				"photoCtrl"
+			],
+			[
+				"Pho",
+				"photoController"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fu",
+				"function	(express.js)"
+			],
+			[
+				"ex",
+				"exports	(express.js)"
+			],
+			[
+				"my",
+				"myDirectives	(my_directives.js)"
+			],
+			[
+				"contr",
+				"controller	AngularJS"
+			],
+			[
+				"co",
+				"controller	Ember.Controller.extend()"
+			],
+			[
+				"c",
+				"current_line"
+			],
+			[
+				"col",
+				"colunm"
+			],
+			[
+				"ca",
+				"caractere_of_heroe"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/subscriptions_controller.rb",
+			"settings":
+			{
+				"buffer_size": 842,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/initializers/stripe.rb",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 1625,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/subscriptions/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 682,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 495,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/subscription.js",
+			"settings":
+			{
+				"buffer_size": 1389,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 570.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/assets",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/assets/javascripts",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/controllers",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/views",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/views/layouts",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/views/subscriptions",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/config",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/config/environments",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/config/initializers"
+	],
+	"file_history":
+	[
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/config/environments/development.rb",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/assets/javascripts/subscription.js",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/views/subscriptions/show.html.erb",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/controllers/subscriptions_controller.rb",
+		"/home/raphael/projetos/ruby/rails/using-api-stripe-with-rails-and-postgresql/app/controllers/subscriptions_controller.br",
+		"/home/raphael/projetos/javascript/angular/manage/app/models/Photo.js",
+		"/home/raphael/projetos/javascript/angular/manage/app/controllers/photo.js",
+		"/home/raphael/projetos/javascript/angular/manage/app/routes/routes.js",
+		"/home/raphael/projetos/javascript/angular/manage/public/controllers/photo_controller.js",
+		"/home/raphael/projetos/javascript/angular/manage/public/config.js",
+		"/home/raphael/projetos/javascript/angular/manage/public/app.js",
+		"/home/raphael/projetos/javascript/angular/manage/.bowerrc",
+		"/home/raphael/projetos/javascript/angular/manage/config/express.js",
+		"/home/raphael/projetos/javascript/angular/manage/server.js",
+		"/home/raphael/projetos/javascript/angular/manage/config/database.js",
+		"/home/raphael/projetos/javascript/angular/manage/app/api.js",
+		"/home/raphael/projetos/javascript/angular/manage/package.json",
+		"/home/raphael/projetos/javascript/angular/manage/app",
+		"/home/raphael/projetos/javascript/angular/manage/.gitignore",
+		"/home/raphael/projetos/javascript/angular/manage/app/api/api.js",
+		"/home/raphael/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/index.html",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/js/directives/my_directives.js",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/js/directives/my_panel.html",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/js/controllers/photo_controller.js",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/partials/essential.html",
+		"/home/raphael/projetos/javascript/angular/alurapic/data.db",
+		"/home/raphael/projetos/javascript/angular/alurapic/public/js/main.js",
+		"/home/raphael/projetos/ruby/rails/app-ember/app/controllers/api/vi",
+		"/home/raphael/projetos/ruby/rails/app-ember/frontend/app/adapters/application.js",
+		"/home/raphael/projetos/ruby/rails/app-ember/app/controllers/ember_controller.rb",
+		"/home/raphael/projetos/ruby/rails/app-ember/app/views/ember/bootstrap.html.erb",
+		"/home/raphael/projetos/ruby/rails/app-ember/app/views/layouts/ember.html.erb",
+		"/home/raphael/projetos/ruby/rails/app-ember/config/routes.rb",
+		"/home/raphael/projetos/ruby/rails/app-ember/Gemfile",
+		"/home/raphael/projetos/jekyll/creative-theme-jekyll-master/_includes/call-to-action.html",
+		"/home/raphael/projetos/jekyll/creative-theme-jekyll-master/_includes/nav.html",
+		"/home/raphael/projetos/ruby/rails/app-ember/app/assets/javascripts/application.js",
+		"/home/raphael/.config/sublime-text-3/Packages/User/Babel.sublime-settings"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/home/raphael/projetos/jekyll/creative-theme-jekyll-master"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n})();",
+			"function",
+			"bower",
+			"titulo",
+			"65px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"title"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								292,
+								292
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "ruby on rails",
+							"apply_syntax_touched": true,
+							"bs_sintax": "ruby on rails",
+							"buffer_scroll_name": "16427a51",
+							"spell_check": false,
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/subscriptions_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								555,
+								555
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "ruby on rails",
+							"apply_syntax_touched": true,
+							"bs_sintax": "ruby on rails",
+							"buffer_scroll_name": "dc366a1c",
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/initializers/stripe.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "ruby on rails",
+							"apply_syntax_touched": true,
+							"bs_sintax": "ruby on rails",
+							"buffer_scroll_name": "c3af47bb",
+							"open_with_edit": true,
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/application.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								346
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "html (rails)",
+							"apply_syntax_touched": true,
+							"bs_sintax": "html (rails)",
+							"buffer_scroll_name": "e7d40d4b",
+							"spell_check": false,
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/subscriptions/new.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "html (rails)",
+							"apply_syntax_touched": true,
+							"bs_sintax": "html (rails)",
+							"buffer_scroll_name": "2124d62b",
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Gemfile",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 495,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								463,
+								463
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"WordCountSyntax": "ruby on rails",
+							"apply_syntax_touched": true,
+							"bs_sintax": "ruby on rails",
+							"buffer_scroll_name": "c5be7f58",
+							"spell_check": false,
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/assets/javascripts/subscription.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1389,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								227,
+								227
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"WordCountSyntax": "javascript",
+							"apply_syntax_touched": true,
+							"bs_sintax": "javascript",
+							"buffer_scroll_name": "b00f016d",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "strip.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 392.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

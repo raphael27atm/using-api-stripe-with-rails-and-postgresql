@@ -1,0 +1,671 @@
+  [1m[36m (92.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (53.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateModels (20151203115906)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (81.7ms)[0m  [1mCREATE TABLE "models" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "User" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (29.3ms)[0m  CREATE UNIQUE INDEX  "index_models_on_email" ON "models"  ("email")
+  [1m[36m (51.0ms)[0m  [1mCREATE UNIQUE INDEX  "index_models_on_reset_password_token" ON "models"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151203115906"]]
+  [1m[36m (26.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEpisodes (20151203115959)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (74.2ms)[0m  [1mCREATE TABLE "episodes" ("id" serial primary key, "title" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151203115959"]]
+  [1m[36m (20.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'episodes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'models'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateEpisodes (20151203115959)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (21.0ms)[0m  DROP TABLE "episodes"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20151203115959"]]
+  [1m[35m (27.2ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'models'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (68.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (75.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEpisodes (20151203115959)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (83.9ms)[0m  [1mCREATE TABLE "episodes" ("id" serial primary key, "title" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151203115959"]]
+  [1m[36m (12.9ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20151203123530)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (110.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (41.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (41.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151203123530"]]
+  [1m[36m (20.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'episodes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-12-03 09:38:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" LIMIT 20 OFFSET 0
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_collection.html.erb (4.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/index.html.erb within layouts/administrate/application (194.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (1.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (286.7ms)
+Completed 200 OK in 2282ms (Views: 2249.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/administrate/application.self-1786af80fa1c593536fe32a4bb7d3f72dedc33a154574830361e0d9678206097.css?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/selectize.self-3effb6f6de816db1f8f925a7be3a1677dcf689b82a2a471d2b6095b87e8872ec.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/moment.self-9e3cbea792908410da80685bcee3695e54b449d063e5dadb3b6c05e038b46444.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/datetime_picker.self-953135ed994cc31cc9cfec48a266ddfc2017dce124e3a2d0503f69d3c31ed8be.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/administrate/components/_search.self-7adb2f7a055eb9954a9015ca41f1028b1ffa44d0a8f5ddb9b7e193c599810f42.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/administrate/components/date_time_picker.self-14e0f83dec04f1cb1f6ea54493ca1e13f538d52363a91b4a66e84c26b1c00a82.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/administrate/components/has_many_form.self-325d9c52ac4d6a50babc33a38730062d30b24b502fd5d7ec618ba28c6555b5b9.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/administrate/components/table.self-be567616202e2a6901a0fdcd096e5a26bee6f88b83444215df31486d22d7bd71.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/assets/administrate/application.self-d088784b7ecb87f1ea17e6f982fa968ffefcc07b79de6ecc548fc00242868da6.js?body=1" for 127.0.0.1 at 2015-12-03 09:38:49 -0300
+
+
+Started GET "/admin/users/new" for 127.0.0.1 at 2015-12-03 09:38:56 -0300
+Processing by Admin::UsersController#new as HTML
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (120.8ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.3ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_form.html.erb (1.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_form.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_form.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_form.html.erb (0.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_form.html.erb (0.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_form.html.erb (147.9ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/new.html.erb within layouts/administrate/application (151.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (70.3ms)
+Completed 200 OK in 321ms (Views: 306.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admin/episodes" for 127.0.0.1 at 2015-12-03 09:39:21 -0300
+Processing by Admin::EpisodesController#index as HTML
+  [1m[35mEpisode Load (1.1ms)[0m  SELECT  "episodes".* FROM "episodes" LIMIT 20 OFFSET 0
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_collection.html.erb (3.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "episodes"[0m
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/index.html.erb within layouts/administrate/application (10.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.8ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (62.4ms)
+Completed 200 OK in 136ms (Views: 130.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admin/episodes/new" for 127.0.0.1 at 2015-12-03 09:39:24 -0300
+Processing by Admin::EpisodesController#new as HTML
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_form.html.erb (16.9ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_form.html.erb (64.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/new.html.erb within layouts/administrate/application (66.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (58.7ms)
+Completed 200 OK in 187ms (Views: 182.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/episodes" for 127.0.0.1 at 2015-12-03 09:39:36 -0300
+Processing by Admin::EpisodesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zve12ODEZJJfvAiQ3LHovdgoE3/pHWgatMcdsq4EEzzLhkeHF7/n506PJYzUxx8yyt/21oHYOPyRqWyJ9tHnBQ==", "episode"=>{"title"=>"Teste", "description"=>"Teste desciption"}, "commit"=>"Create Episode"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (35.0ms)[0m  [1mINSERT INTO "episodes" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Teste"], ["description", "Teste desciption"], ["created_at", "2015-12-03 12:39:36.427954"], ["updated_at", "2015-12-03 12:39:36.427954"]]
+  [1m[35m (20.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/episodes/1
+Completed 302 Found in 64ms (ActiveRecord: 56.4ms)
+
+
+Started GET "/admin/episodes/1" for 127.0.0.1 at 2015-12-03 09:39:36 -0300
+Processing by Admin::EpisodesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEpisode Load (0.4ms)[0m  [1mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_show.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_show.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_show.html.erb (0.3ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_show.html.erb (1.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_show.html.erb (0.3ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/show.html.erb within layouts/administrate/application (9.9ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (58.1ms)
+Completed 200 OK in 225ms (Views: 150.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/episodes" for 127.0.0.1 at 2015-12-03 09:39:39 -0300
+Processing by Admin::EpisodesController#index as HTML
+  [1m[35mEpisode Load (0.5ms)[0m  SELECT  "episodes".* FROM "episodes" LIMIT 20 OFFSET 0
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_index.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_index.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_index.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_index.html.erb (0.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_collection.html.erb (10.8ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "episodes"[0m
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/index.html.erb within layouts/administrate/application (20.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (57.8ms)
+Completed 200 OK in 136ms (Views: 134.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/episodes/new" for 127.0.0.1 at 2015-12-03 09:39:42 -0300
+Processing by Admin::EpisodesController#new as HTML
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_form.html.erb (0.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_form.html.erb (0.8ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_form.html.erb (4.6ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/new.html.erb within layouts/administrate/application (7.8ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (47.7ms)
+Completed 200 OK in 111ms (Views: 110.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/episodes" for 127.0.0.1 at 2015-12-03 09:39:56 -0300
+Processing by Admin::EpisodesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xSWYl2xZIM89xflq5kfoYeI4ArPv3+5ezdOX+632G7RoVGrImyKjuiz21HbuMR/u8M/nGocavrjovebA9SPvjQ==", "episode"=>{"title"=>"Teste 02", "description"=>"Desrciption 02"}, "commit"=>"Create Episode"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "episodes" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Teste 02"], ["description", "Desrciption 02"], ["created_at", "2015-12-03 12:39:56.164448"], ["updated_at", "2015-12-03 12:39:56.164448"]]
+  [1m[35m (69.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/episodes/2
+Completed 302 Found in 73ms (ActiveRecord: 69.8ms)
+
+
+Started GET "/admin/episodes/2" for 127.0.0.1 at 2015-12-03 09:39:56 -0300
+Processing by Admin::EpisodesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEpisode Load (0.9ms)[0m  [1mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_show.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_show.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_show.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_show.html.erb (0.4ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_show.html.erb (0.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/show.html.erb within layouts/administrate/application (7.3ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (51.8ms)
+Completed 200 OK in 115ms (Views: 111.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin/episodes" for 127.0.0.1 at 2015-12-03 09:39:58 -0300
+Processing by Admin::EpisodesController#index as HTML
+  [1m[35mEpisode Load (0.4ms)[0m  SELECT  "episodes".* FROM "episodes" LIMIT 20 OFFSET 0
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_index.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_index.html.erb (0.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_index.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/number/_index.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/string/_index.html.erb (0.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/text/_index.html.erb (0.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/fields/date_time/_index.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_collection.html.erb (10.3ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "episodes"[0m
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/index.html.erb within layouts/administrate/application (15.9ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_sidebar.html.erb (0.5ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_flashes.html.erb (0.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/administrate-0.1.1/app/views/administrate/application/_javascript.html.erb (57.3ms)
+Completed 200 OK in 142ms (Views: 140.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:18:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 59ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:19:37 -0300
+Processing by EpisodesController#index as HTML
+  [1m[35mEpisode Load (1.0ms)[0m  SELECT "episodes".* FROM "episodes"
+  Rendered episodes/index.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 1196ms (ActiveRecord: 6.0ms)
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::STRIPE_PUBLIC):
+     6:   <%= javascript_include_tag 'application', 'https://js.stripe.com/v2/', 'data-turbolinks-track' => true %>
+     7:   <%= csrf_meta_tags %>
+     8: 
+     9:   <%= tag :meta, name: "stripe-key", content: STRIPE_PUBLIC %>
+    10: </head>
+    11: <body>
+    12: 
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___2945817255506986008_70153741995560'
+
+
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+Processing by EpisodesController#index as HTML
+  [1m[36mEpisode Load (0.6ms)[0m  [1mSELECT "episodes".* FROM "episodes"[0m
+  Rendered episodes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 119ms (Views: 117.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:03 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:20:35 -0300
+Processing by EpisodesController#index as HTML
+  [1m[35mEpisode Load (0.6ms)[0m  SELECT "episodes".* FROM "episodes"
+  Rendered episodes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 2498ms (Views: 2496.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/episodes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/episodes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/subscription.self-e54185c90acba9201f36a73d8188580da5641d8b556896cb3a84c67d65e9200c.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-12-03 11:20:38 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:22:52 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EpisodesController#index as HTML
+  [1m[35mEpisode Load (0.4ms)[0m  SELECT "episodes".* FROM "episodes"
+  Rendered episodes/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 231ms (Views: 218.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/episodes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/episodes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/subscription.self-e54185c90acba9201f36a73d8188580da5641d8b556896cb3a84c67d65e9200c.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-12-03 11:22:53 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 11:23:51 -0300
+Processing by EpisodesController#index as HTML
+  [1m[36mEpisode Load (0.6ms)[0m  [1mSELECT "episodes".* FROM "episodes"[0m
+  Rendered episodes/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1463ms (Views: 1461.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/episodes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/application.self-ff0ee5a9108d68f2423bdd87052c3344a260238a2fc640b4ffd631b484dcf91b.css?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/episodes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/subscription.self-e54185c90acba9201f36a73d8188580da5641d8b556896cb3a84c67d65e9200c.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-12-03 11:23:52 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 16:08:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (77.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EpisodesController#index as HTML
+  [1m[35mEpisode Load (38.1ms)[0m  SELECT "episodes".* FROM "episodes"
+  Rendered episodes/index.html.erb within layouts/application (160.6ms)
+Completed 200 OK in 832ms (Views: 637.4ms | ActiveRecord: 152.6ms)
+
+
+Started GET "/subscription" for 127.0.0.1 at 2015-12-03 16:08:37 -0300
+
+ActionController::RoutingError (uninitialized constant SubscriptionsController):
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.4) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:72:in `controller_reference'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:62:in `controller'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:41:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.4) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.4) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.4) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.4) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/raphael/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/raphael/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/raphael/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.1ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.5ms)
+
+
+Started GET "/subscription" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+Processing by SubscriptionsController#show as HTML
+  Rendered subscriptions/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 94ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/episodes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/episodes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/application.self-ff0ee5a9108d68f2423bdd87052c3344a260238a2fc640b4ffd631b484dcf91b.css?body=1" for 127.0.0.1 at 2015-12-03 16:10:48 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:49 -0300
+
+
+Started GET "/assets/subscription.self-e54185c90acba9201f36a73d8188580da5641d8b556896cb3a84c67d65e9200c.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:49 -0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-12-03 16:10:49 -0300
+
+
+Started GET "/subscription" for 127.0.0.1 at 2015-12-03 16:13:42 -0300
+Processing by SubscriptionsController#show as HTML
+  Rendered subscriptions/show.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Title:</strong>
+    5:   <%= @episode.title%>
+    6: </p>
+    7: 
+    8: <p>
+  app/views/subscriptions/show.html.erb:5:in `_app_views_subscriptions_show_html_erb__2057010075561110109_70336436955560'
+
+
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/raphael/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.1ms)
+
+
+Started GET "/subscription/new" for 127.0.0.1 at 2015-12-03 17:16:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SubscriptionsController#new as HTML
+  Rendered subscriptions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 316ms (Views: 304.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/subscription.self-876aaa36eb27b5183883c6b035aa48dd8aa4d81d2dee69da92bf5105082eff8c.js?body=1" for 127.0.0.1 at 2015-12-03 17:16:19 -0300
+
+
+Started GET "/subscription/new" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+Processing by SubscriptionsController#new as HTML
+Redirected to http://localhost:3000/users/sign_up
+Filter chain halted as :redirect_to_signup rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 324ms (Views: 299.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/episodes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/jquery.turbolinks.self-176b9819f30444d441e820bbccd3264fe57753aeafd54dec732b0dbc77129a2a.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/application.self-ff0ee5a9108d68f2423bdd87052c3344a260238a2fc640b4ffd631b484dcf91b.css?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/episodes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/assets/subscription.self-876aaa36eb27b5183883c6b035aa48dd8aa4d81d2dee69da92bf5105082eff8c.js?body=1" for 127.0.0.1 at 2015-12-03 17:17:44 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 17:22:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EpisodesController#index as HTML
+  [1m[35mEpisode Load (0.4ms)[0m  SELECT "episodes".* FROM "episodes"
+  Rendered episodes/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 289ms (Views: 273.5ms | ActiveRecord: 3.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddStripDataToUsers (20151203203534)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (125.2ms)[0m  [1mALTER TABLE "users" ADD "stripe_id" character varying[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "stripe_subscription_id" character varying
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "users" ADD "card_last4" character varying[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "card_exp_month" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "card_exp_year" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "card_type" character varying
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20151203203534"]]
+  [1m[35m (30.3ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'episodes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
